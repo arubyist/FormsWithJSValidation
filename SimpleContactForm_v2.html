@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+
+			<style type="text/css">
+
+					h1 {
+					  text-align: center;
+					}
+
+					form {
+					  margin: auto;
+					  width: 550px;
+					  font-family: Tahoma, Geneva, sans-serif;
+					  font-size: 19px;
+					  line-height: 24px;
+					  font-weight: bold;
+					  color: #6EB5FF;
+					  text-decoration: none;
+					}
+
+					input {
+					  width: 100%;
+					  display: block;
+					  border: 1px solid #999;
+					  height: 25px;
+					  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+					}
+
+					input[type=text], [type=email] {
+						font-family: Tahoma, Geneva, sans-serif;
+					  font-size: 16px;
+					  color: #808080;
+					}
+
+					input[type=submit] {
+					  background: #6EB5FF;
+					  height: 80px;
+					  border-radius: 15px;
+					  border: 1p solid #999;
+					  font-size: 19px;
+					  color: #fff;
+					}
+
+					input[type=submit]:hover {
+					  background: #FFF;
+					  color: #09C;
+					  border: none;
+					}
+
+			</style>
+
+			<script type="text/javascript">
+
+				function validy() {
+				  var fields = document.getElementsByClassName("required"), sendForm=true; 
+				  for (var i = 0; i < fields.length; i++) {
+				    if(!fields[i].value) {
+				      fields[i].style.backgroundColor = "yellow";
+				      sendForm=false;
+				      document.getElementById('error_message').innerHTML = "Please don't leave any fields blank."
+				    }
+				    else {
+				      fields[i].style.background = "#fff"; 
+				    }
+				  }
+				  if(!sendForm) {
+				    return false; 
+				  }
+				}
+					
+
+			</script>
+
+		</head>
+		<body>
+		
+			<form>
+				<h1>Simple Contact Form</h1>
+
+				<div id="error_message"></div>
+				<br/ >
+
+		    <label for='first_name'>First Name</label>
+		    <input type='text' id='first_name' name='first_name' class="required"><br />
+
+		    <label for='last_name'>Last Name</label>
+		    <input type='text' id='last_name' name='last_name' class="required"><br />
+
+		    <label>Email:<input type="email"  class="required"></label><br/>
+		   
+		    <input type="submit" value="Click Here" onclick=" return validy()">
+		</form>
+		</body>
+	</html>
