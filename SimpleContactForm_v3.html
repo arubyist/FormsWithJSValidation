@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<meta charset="utf-8" />
+
+			<style type="text/css">
+
+					h1 {
+					  text-align: center;
+					}
+
+					form {
+					  margin: auto;
+					  width: 550px;
+					  font-family: Tahoma, Geneva, sans-serif;
+					  font-size: 19px;
+					  line-height: 24px;
+					  font-weight: bold;
+					  color: #6EB5FF;
+					  text-decoration: none;
+					}
+
+					input {
+					  width: 100%;
+					  display: block;
+					  border: 1px solid #999;
+					  height: 25px;
+					  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+					}
+
+					input[type=text], [type=email] {
+						font-family: Tahoma, Geneva, sans-serif;
+					  font-size: 16px;
+					  color: #808080;
+					}
+
+					input[type=submit] {
+					  background: #6EB5FF;
+					  height: 80px;
+					  border-radius: 15px;
+					  border: 1p solid #999;
+					  font-size: 19px;
+					  color: #fff;
+					}
+
+					input[type=submit]:hover {
+					  background: #FFF;
+					  color: #09C;
+					  border: none;
+					}
+
+			</style>
+
+			<script type="text/javascript">
+
+				function validy() {
+
+					if (document.simpleForm.first_name.value == "") {
+						document.getElementById("fname_error_message").innerHTML = "Please enter your first name" 
+						return false;
+					}
+
+					if (document.simpleForm.last_name.value == "") {
+						document.getElementById("lname_error_message").innerHTML = "Please enter your last name"
+						return false;
+					}
+
+					if (document.simpleForm.email.value == "") {
+						document.getElementById("email_error_message").innerHTML = "Please enter your email address"
+						return false;
+					}
+	
+				} 					
+
+			</script>
+
+		</head>
+		<body>
+		
+			<form name="simpleForm" id="simpleForm" action="" method="post">
+				<h1>Simple Contact Form</h1>
+
+			
+		    <label for='first_name'>First Name</label>
+		    <input type='text' id='first_name' name='first_name' class="required">
+		    <span id="fname_error_message"></span>
+		    <br /><br />
+
+		    <label for='last_name'>Last Name</label>
+		    <input type='text' id='last_name' name='last_name' class="required">
+		    <span id="lname_error_message"></span>
+		    <br /><br />
+
+		    <label for='email'>Email: <input type="email" id="email" name="email" class="required"></label>
+		    <span id="email_error_message"></span>
+		    <br /><br />
+		    <input type="submit" value="Click Here" onclick=" return validy()">
+		</form>
+		</body>
+	</html>
